@@ -13,7 +13,7 @@
 	  images = Object.keys(imageFiles).map((key, index) => ({
 		id: index + 1,
 		name: key.match(/\/(\d+)\.png$/)[1], // Extracting the number from the file path
-		path: key,
+		path: key.replace(/^\.\//, ''), // Remove the leading './'
 	  }));
   
 	  // Initial sorting
